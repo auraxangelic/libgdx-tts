@@ -502,7 +502,6 @@ public class LPCResult {
 		double multiplier = (double) getLPCRange() / 65535.0;
 		int s = 0;
 
-		dump();
 		// for each frame in the LPC result
 		for (int r = 0, i = 0;
 			 (ok &= !speakable.isCompleted()) &&
@@ -655,7 +654,6 @@ public class LPCResult {
 	 * @return the wave
 	 */
 	private  Wave getWave() {
-		System.out.println("constructing a wave: sampleRate: "+getSampleRate());
 		// construct a new wave object
 		AudioFormat audioFormat = new AudioFormat
 				(getSampleRate(),

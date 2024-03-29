@@ -1,5 +1,8 @@
 package com.auraxangelic.libgdxtts
 
+import java.nio.ByteBuffer
+import java.nio.ByteOrder
+
 object Bitshift {
     fun bytesToShorts(bytes: ByteArray): ShortArray {
         val size = bytes.size
@@ -7,7 +10,11 @@ object Bitshift {
 
         var index = 0
         while (index < size) {
-            shortArray[index / 2] = (bytes[index].toInt() shl 8 and bytes[index + 1].toInt()).toShort()
+            val bb: ByteBuffer = ByteBuffer.allocate(2)
+            bb.order(ByteOrder.LITTLE_ENDIAN)
+            bb.put(bytes[index+1])
+            bb.put(bytes[index])
+            shortArray[index/2] = bb.getShort(0)
             index += 2
         }
         return shortArray

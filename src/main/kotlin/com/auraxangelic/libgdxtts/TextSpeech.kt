@@ -37,7 +37,6 @@ object TextSpeech {
 
     /** Speaks the given text. */
     fun speak(text: String) {
-        println("speaking: $text")
         synthesizer.speakPlainText(
             text, null
         )
