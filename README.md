@@ -19,15 +19,15 @@ dependencies {
     api fileTree(dir: "../libs", include: ["*.jar"])
 }
 ```
-4. At any point after your Game class has been initialized, run the following:
+4. At any point after your Game class has been initialized, you my use the `TextSpeech` class to read any string.
 ```
 import com.auraxangelic.libgdxtts.TextSpeech
 ...
 
     TextSpeech.speak("testing 1 2 3")
 ```
-5. The text to speech will run asynchronously. If you want to block until it's finished speaking, you can run the following: `TextSpeech.waitUntilFinished()`
-6. The `TextSpeech` class allocates and runs on its own thread. Make sure to deallocate it when your game exits by running `TextSpeech.deallocate()`, or run `exitProcess(0)`/`System.exit(0)` to close the thread.
+5. The text to speech will run asynchronously. If you want to block until it's finished speaking, you can run: `TextSpeech.waitUntilFinished()`
+6. The `TextSpeech` class allocates and runs on its own thread. Make sure to deallocate the thread when your game exits by running `TextSpeech.deallocate()`, or run `exitProcess(0)`/`System.exit(0)`.
 
 ## Issues
 Currently doesn't work for iOS robovm since AudioDevice interface isn't implemented yet for iOS.
