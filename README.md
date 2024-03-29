@@ -1,5 +1,5 @@
 # libgdx-tts
-Text to Speech for LibGDX
+Text to Speech Synthesizer for LibGDX. Working on desktop and android.
 
 ## Releases
 
@@ -33,6 +33,4 @@ import com.auraxangelic.libgdxtts.TextSpeech
 Currently doesn't work for iOS robovm since AudioDevice interface isn't implemented yet.
 
 ## Information
-Created using FreeTTS source: https://freetts.sourceforge.io/ by replacing its default audio player with the libGDX one.
-
-Tested working on desktop and android.
+Created using FreeTTS source: https://freetts.sourceforge.io/ by replacing its default audio player with the libGDX one `Gdx.audio#newAudioDevice`.
