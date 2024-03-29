@@ -5,7 +5,7 @@ Text to Speech for LibGDX
 
 For the latest release, download the jar here:
 
-[https://github.com/auraxangelic/libgdx-tts/releases/tag/libgdx-tts](https://github.com/auraxangelic/libgdx-tts/releases/tag/v1.0.0)
+https://github.com/auraxangelic/libgdx-tts/releases/tag/v1.0.0
 
 ## Usage
 
