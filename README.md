@@ -11,7 +11,7 @@ https://github.com/auraxangelic/libgdx-tts/releases/tag/v1.0.0
 
 1. Download the jar from the releases.
 2. Put the jar into your libGDX project.
-3. Include the jar in your core module's `build.gradle` with something like the following: 
+3. Include the jar in your `core` module's `build.gradle` with something like the following: 
 ```
 dependencies {
     ...
