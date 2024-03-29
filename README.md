@@ -30,7 +30,7 @@ import com.auraxangelic.libgdxtts.TextSpeech
 6. The `TextSpeech` class allocates and runs on its own thread. Make sure to deallocate it when your game exits by running `TextSpeech.deallocate()`, or run `exitProcess(0)`/`System.exit(0)` to close the thread.
 
 ## Issues
-Currently doesn't work for iOS robovm since AudioDevice interface isn't implemented yet.
+Currently doesn't work for iOS robovm since AudioDevice interface isn't implemented yet for iOS.
 
 ## Information
 Created using FreeTTS source: https://freetts.sourceforge.io/ by replacing its default audio player with the libGDX one `Gdx.audio#newAudioDevice`.
