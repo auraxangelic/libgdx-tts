@@ -11,13 +11,16 @@ object TextSpeech {
 
     init {
         // Set property as Kevin Dictionary
+        com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory()
         System.setProperty(
             "freetts.voices",
             "com.sun.speech.freetts.en.us"
                     + ".cmu_us_kal.KevinVoiceDirectory"
         )
 
+
         // Register Engine
+        com.sun.speech.freetts.jsapi.FreeTTSEngineCentral()
         Central.registerEngineCentral(
             ("com.sun.speech.freetts"
                     + ".jsapi.FreeTTSEngineCentral")
