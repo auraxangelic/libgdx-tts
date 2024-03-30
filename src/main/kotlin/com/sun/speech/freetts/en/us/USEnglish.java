@@ -42,7 +42,7 @@ public class USEnglish {
     public static final String RX_DEFAULT_US_EN_INT = "-?[0-9]+";
     /** default double regular expression pattern */
     public static final String RX_DEFAULT_US_EN_DOUBLE =
-	"";
+	"(-?)(0|([1-9][0-9]*))(\\.[0-9]+)?";
     /** default integer with commas  regular expression pattern */
     public static final String RX_DEFAULT_US_EN_COMMAINT =
 	"[0-9][0-9]?[0-9]?,([0-9][0-9][0-9],)*[0-9][0-9][0-9](\\.[0-9]+)?";
