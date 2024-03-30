@@ -5,7 +5,7 @@ Text to Speech Synthesizer for LibGDX. Working on desktop and android.
 
 For the latest release, download the jar here:
 
-https://github.com/auraxangelic/libgdx-tts/releases/tag/v1.0.0
+https://github.com/auraxangelic/libgdx-tts/releases
 
 ## Usage
 
