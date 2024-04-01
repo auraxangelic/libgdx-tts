@@ -33,7 +33,9 @@ import com.auraxangelic.libgdxtts.TextSpeech
 ## Issues
 Currently doesn't work for iOS robovm, but should be working soon once this PR is merged and a new libGDX version is released: https://github.com/libgdx/libgdx/pull/7371
 
-This library isn't uploaded to maven central yet, so you must download the binaries manualy or clone the source yourself to use it.
+This library isn't uploaded to maven central yet, so you must download the binaries manualy or clone the source yourself to use it.\
+
+When a new speak call is made, the audio will play a tiny bit of the end of the previous speak call.
 
 ## Information
 Created using FreeTTS source: https://freetts.sourceforge.io/ by replacing its default audio player with the libGDX one `Gdx.audio#newAudioDevice`.
