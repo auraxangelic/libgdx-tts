@@ -31,7 +31,7 @@ import com.auraxangelic.libgdxtts.TextSpeech
 6. The text to speech will run asynchronously. If you want to block until it's finished speaking, you can run: `TextSpeech.waitUntilFinished()`/`TextSpeech.INSTANCE.waitUntilFinished()`
 7. The `TextSpeech` class allocates and runs on its own thread. Make sure to deallocate the thread when your game exits by running `TextSpeech.deallocate()`/`TextSpeech.INSTANCE.deallocate()`, or run `exitProcess(0)`/`System.exit(0)`.
 
-## Issues
+## Known Issues
 Currently doesn't work for iOS robovm, but should be working soon once this PR is merged and a new libGDX version is released: https://github.com/libgdx/libgdx/pull/7371
 
 This library isn't uploaded to maven central yet, so you must download the binaries manualy or clone the source yourself to use it.
