@@ -1,5 +1,5 @@
 # libgdx-tts
-Text to Speech Synthesizer for LibGDX. Working on desktop and android.
+Library for a text-to-speech synthesizer for LibGDX. Working on desktop and android.
 
 ## Releases
 
