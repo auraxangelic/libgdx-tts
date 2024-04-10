@@ -32,7 +32,7 @@ import com.auraxangelic.libgdxtts.TextSpeech
 7. The `TextSpeech` class allocates and runs on its own thread. Make sure to deallocate the thread when your game exits by running `TextSpeech.deallocate()`/`TextSpeech.INSTANCE.deallocate()`, or run `exitProcess(0)`/`System.exit(0)`.
 
 ## Known Issues
-Currently doesn't work for iOS robovm, but should be working soon once this PR is merged and a new libGDX version is released: https://github.com/libgdx/libgdx/pull/7371
+Currently doesn't work for iOS robovm, but should be working soon once a new libGDX version is released. The PR to make it work for iOS is here: https://github.com/libgdx/libgdx/pull/7371
 
 This library isn't uploaded to maven central yet, so you must download the binaries manualy or clone the source yourself to use it.
 
