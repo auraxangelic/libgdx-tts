@@ -33,7 +33,7 @@ import com.auraxangelic.libgdxtts.TextSpeech
 
 ## Known Issues
 Currently doesn't work for iOS robovm on libGDX version 1.12.1, but should be working once a new libGDX version is released. The PR to make it work for iOS is here: https://github.com/libgdx/libgdx/pull/7371
-You can have it work for iOS by building the latest main branch by following steps here: https://libgdx.com/dev/from-source/
+You can have it work for iOS now by building the latest main branch by following steps here: https://libgdx.com/dev/from-source/
 
 This library isn't uploaded to maven central yet, so you must download the binaries manualy or clone the source yourself to use it.
 
