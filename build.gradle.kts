@@ -1,6 +1,12 @@
 plugins {
     kotlin("jvm") version "1.9.23"
     `maven-publish`
+    java
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 publishing {
