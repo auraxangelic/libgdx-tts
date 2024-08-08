@@ -15,7 +15,7 @@ publishing {
     }
 }
 
-group = "com.reikaxubia.libgdxtts"
+group = "com.github.auraxangelic"
 version = "1.0.3"
 
 dependencies {
@@ -25,7 +25,7 @@ dependencies {
 
     testImplementation("org.jetbrains.kotlin:kotlin-test")
 
-    implementation ("com.github.auraxangelic:libgdx-tts:v1.0.3")
+    implementation ("com.github.auraxangelic:libgdx-tts:master-SNAPSHOT")
 }
 
 tasks.test {
