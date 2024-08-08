@@ -1,5 +1,18 @@
 plugins {
     kotlin("jvm") version "1.9.23"
+    `maven-publish`
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.reikaxubia"
+            artifactId = "libgdxtts"
+            version = "1.0.3"
+
+            from(components["java"])
+        }
+    }
 }
 
 group = "com.reikaxubia.libgdxtts"
