@@ -14,7 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.badlogic.gdx.audio.AudioDevice;
-import com.auraxangelic.libgdxtts.Bitshift;
+import com.reikaxubia.libgdxtts.Bitshift;
 import com.sun.speech.freetts.ProcessException;
 import com.sun.speech.freetts.Utterance;
 import com.sun.speech.freetts.UtteranceProcessor;

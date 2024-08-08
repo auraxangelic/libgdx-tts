@@ -1,4 +1,4 @@
-package com.auraxangelic.libgdxtts
+package com.reikaxubia.libgdxtts
 
 import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.audio.AudioDevice

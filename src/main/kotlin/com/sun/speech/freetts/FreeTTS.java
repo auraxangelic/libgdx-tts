@@ -27,7 +27,7 @@ import javax.sound.sampled.AudioSystem;
 
 import com.badlogic.gdx.audio.AudioDevice;
 
-import static com.auraxangelic.libgdxtts.AudioDeviceGetKt.audioDeviceGet;
+import static com.reikaxubia.libgdxtts.AudioDeviceGetKt.audioDeviceGet;
 
 /**
  * Standalone utility that directly interacts with a CMUDiphoneVoice.

@@ -25,7 +25,7 @@ import com.sun.speech.engine.synthesis.BaseSynthesizerQueueItem;
 import com.sun.speech.engine.synthesis.BaseVoice;
 import com.sun.speech.freetts.OutputQueue;
 
-import static com.auraxangelic.libgdxtts.AudioDeviceGetKt.audioDeviceGet;
+import static com.reikaxubia.libgdxtts.AudioDeviceGetKt.audioDeviceGet;
 
 /**
  * Provides  partial support for a JSAPI 1.0 synthesizer for the 

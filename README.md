@@ -22,7 +22,7 @@ dependencies {
 4. Make sure you refresh gradle.
 5. At any point after your Game class has been initialized, you my use the `TextSpeech` class to read any string.
 ```
-import com.auraxangelic.libgdxtts.TextSpeech
+import com.reikaxubia.libgdxtts.TextSpeech
 ...
 
     TextSpeech.speak("testing 1 2 3")

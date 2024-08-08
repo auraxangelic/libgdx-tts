@@ -37,7 +37,7 @@ import com.sun.speech.freetts.relp.LPCResult;
 import com.sun.speech.freetts.util.BulkTimer;
 import com.sun.speech.freetts.util.Utilities;
 
-import static com.auraxangelic.libgdxtts.AudioDeviceGetKt.audioDeviceGet;
+import static com.reikaxubia.libgdxtts.AudioDeviceGetKt.audioDeviceGet;
 
 
 /**

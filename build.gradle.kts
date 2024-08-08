@@ -2,8 +2,8 @@ plugins {
     kotlin("jvm") version "1.9.23"
 }
 
-group = "com.auraxangelic.libgdxtts"
-version = "1.0.2"
+group = "com.reikaxubia.libgdxtts"
+version = "1.0.3"
 
 repositories {
     mavenCentral()

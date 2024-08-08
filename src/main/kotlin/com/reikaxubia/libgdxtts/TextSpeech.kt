@@ -1,4 +1,4 @@
-package com.auraxangelic.libgdxtts
+package com.reikaxubia.libgdxtts
 
 import java.util.*
 import javax.speech.Central

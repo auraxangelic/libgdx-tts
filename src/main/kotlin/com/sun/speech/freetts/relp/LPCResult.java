@@ -19,12 +19,14 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import javax.sound.sampled.AudioFormat;
 
-import com.auraxangelic.libgdxtts.Bitshift;
+import com.reikaxubia.libgdxtts.Bitshift;
 import com.badlogic.gdx.audio.AudioDevice;
 import com.sun.speech.freetts.Utterance;
 import com.sun.speech.freetts.FreeTTSSpeakable;
 import com.sun.speech.freetts.util.WaveUtils;
 import com.sun.speech.freetts.util.Utilities;
+
+import static com.reikaxubia.libgdxtts.AudioDeviceGetKt.audioDeviceGet;
 
 /**
  * Contains the result of linear predictive coding processing.
@@ -477,6 +479,8 @@ public class LPCResult {
 		}
 		return samples;
 	}
+	
+	private AudioDevice realPlayer;
 
 	/**
 	 * Play the sample data on the given player
@@ -487,6 +491,7 @@ public class LPCResult {
 	private boolean  playWaveSamples(AudioDevice player,
 									 FreeTTSSpeakable speakable,
 									 int numberSamples) {
+		realPlayer = audioDeviceGet();
 		boolean ok = true;
 		int numberChannels = getNumberOfChannels();
 		int pmSizeSamples;
@@ -539,7 +544,7 @@ public class LPCResult {
 
 				if (s >= MAX_SAMPLE_SIZE) {
 					if ((ok &= !speakable.isCompleted())) {
-						player.writeSamples(Bitshift.INSTANCE.bytesToShorts(samples), 0, s/2);
+						realPlayer.writeSamples(Bitshift.INSTANCE.bytesToShorts(samples), 0, s/2);
 					}
 					s = 0;
 				}
@@ -551,13 +556,14 @@ public class LPCResult {
 
 		// write out the very last samples
 		if ((ok &= !speakable.isCompleted()) && s > 0) {
-			player.writeSamples(Bitshift.INSTANCE.bytesToShorts(samples), 0, s/2);
+			realPlayer.writeSamples(Bitshift.INSTANCE.bytesToShorts(samples), 0, s/2);
 			s = 0;
 		}
 
 		// tell the AudioPlayer it is the end of Utterance
 		if (ok &= !speakable.isCompleted()) {
-
+			realPlayer.dispose();
+			realPlayer = null;
 		}
 
 		return ok;
