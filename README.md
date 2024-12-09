@@ -32,9 +32,6 @@ import com.reikaxubia.libgdxtts.TextSpeech
 7. The `TextSpeech` class allocates and runs on its own thread. Make sure to deallocate the thread when your game exits by running `TextSpeech.deallocate()`/`TextSpeech.INSTANCE.deallocate()`, or run `exitProcess(0)`/`System.exit(0)`.
 
 ## Known Issues
-Currently doesn't work for iOS robovm on libGDX version 1.12.1, but should be working once a new libGDX version is released. The PR to make it work for iOS is here: https://github.com/libgdx/libgdx/pull/7371
-You can have it work for iOS now by building the latest main branch by following steps here: https://libgdx.com/dev/from-source/
-
 This library isn't uploaded to maven central yet, so you must download the binaries manualy or clone the source yourself to use it.
 
 On desktop, when a new `speak` call is made, the audio will play a tiny bit of the end of the previous `speak` call. This is due to how the AudioDevice is currently implemented for desktop.
