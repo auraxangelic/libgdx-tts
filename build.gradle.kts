@@ -8,15 +8,15 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "com.reikaxubia"
             artifactId = "libgdxtts"
-            version = "1.0.3"
+            version = "1.0.4"
 
             from(components["java"])
         }
     }
 }
 
-group = "com.github.auraxangelic"
-version = "1.0.3"
+group = "com.reikaxubia"
+version = "1.0.4"
 
 dependencies {
     implementation("com.badlogicgames.gdx:gdx:${findProperty("gdxVersion")}")
