@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.github.auraxangelic"
-version = "1.0.6"
+version = "1.0.7"
 
 dependencies {
     implementation("com.badlogicgames.gdx:gdx:${findProperty("gdxVersion")}")
