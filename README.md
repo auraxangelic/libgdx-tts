@@ -1,6 +1,8 @@
 # libgdx-tts
 Library for a text-to-speech synthesizer for LibGDX. Available for desktop and android apps.
 
+Note: If you need to compile for iOS, make sure you're on at least libGDX version 1.13.0
+
 ## Releases
 
 For the latest release, download the jar here:
