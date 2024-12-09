@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/auraxangelic/libgdx-tts.svg)](https://jitpack.io/#auraxangelic/libgdx-tts)
+
 # libgdx-tts
 Library for a text-to-speech synthesizer for LibGDX. Available for desktop and android apps.
 
