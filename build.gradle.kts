@@ -3,6 +3,13 @@ plugins {
     `maven-publish`
     id("com.github.johnrengelman.shadow") version "8.1.1"
 }
+sourceSets {
+    main {
+        java {
+            setSrcDirs(listOf("src/main/kotlin"))
+        }
+    }
+}
 
 group = "com.github.auraxangelic"
 version = "1.0.11"
