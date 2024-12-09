@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.github.auraxangelic"
-version = "1.0.10"
+version = "1.0.11"
 
 dependencies {
     implementation("com.badlogicgames.gdx:gdx:${findProperty("gdxVersion")}")
@@ -17,9 +17,19 @@ dependencies {
 
 tasks {
     shadowJar {
-        archiveBaseName.set("libgdx-tts")
-        archiveClassifier.set("")
+        archiveBaseName.set("libgdx-tts") // Name of the fat JAR
+        archiveClassifier.set("") // Ensure no "-all" suffix
         from(sourceSets.main.get().output)
+    }
+
+    // Disable the default jar task to prevent conflicts
+    jar {
+        enabled = false
+    }
+
+    // Ensure shadowJar runs as part of the build lifecycle
+    build {
+        dependsOn(shadowJar)
     }
 }
 
@@ -27,14 +37,14 @@ publishing {
     publications {
         create<MavenPublication>("maven") {
             groupId = project.group.toString()
-            artifactId = project.name
+            artifactId = "libgdx-tts" // Artifact name
             version = project.version.toString()
 
-            artifact(tasks.shadowJar.get()) // Use the fat JAR
+            // Use the shadowJar artifact for publishing
+            artifact(tasks.shadowJar.get())
         }
     }
 }
-
 tasks.test {
     useJUnitPlatform()
 }
