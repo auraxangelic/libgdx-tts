@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.github.auraxangelic"
-version = "1.0.8"
+version = "1.0.9"
 
 dependencies {
     implementation("com.badlogicgames.gdx:gdx:${findProperty("gdxVersion")}")
@@ -15,9 +15,19 @@ dependencies {
 }
 
 tasks.withType<Jar> {
-    archiveBaseName.set("libgdx-tts") // Name of the artifact
-    from(sourceSets.main.get().output) // Include compiled classes
-    from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) }) // Include runtime dependencies
+    archiveBaseName.set("libgdx-tts") // Name of your artifact
+    from(sourceSets.main.get().output)
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = project.group.toString()
+            artifactId = project.name // Defaults to project name
+            version = project.version.toString()
+            from(components["java"]) // Publish the Java component
+        }
+    }
 }
 
 tasks.test {
