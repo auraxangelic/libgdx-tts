@@ -3,20 +3,12 @@
 # libgdx-tts
 Library for a text-to-speech synthesizer for LibGDX. Available for desktop and android apps.
 
-Note: If you need to compile for iOS, make sure you're on at least libGDX version 1.13.0
-
 ## Gradle Confirugation
 
 Add the following line to your core module dependencies:
 ```
 api "com.github.auraxangelic:libgdx-tts:v1.0.9"
 ```
-
-## Releases
-
-For the latest release, download the jar here:
-
-https://github.com/auraxangelic/libgdx-tts/releases
 
 ## Usage
 
