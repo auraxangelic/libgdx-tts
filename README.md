@@ -3,7 +3,7 @@
 # libgdx-tts
 Library for a text-to-speech synthesizer for LibGDX. Available for desktop and android apps.
 
-## Gradle Confirugation
+## Gradle Configuration
 
 Add the following line to your core module dependencies:
 ```
