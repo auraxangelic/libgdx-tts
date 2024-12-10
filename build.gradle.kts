@@ -12,7 +12,7 @@ sourceSets {
 }
 
 group = "com.github.auraxangelic"
-version = "1.0.13"
+version = "1.0.14"
 
 dependencies {
     implementation("com.badlogicgames.gdx:gdx:${findProperty("gdxVersion")}")
@@ -22,12 +22,11 @@ dependencies {
 
 tasks {
     shadowJar {
-        // Exclude libGDX classes from the shadow JAR
-        dependencies {
-            exclude(dependency("com.badlogicgames.gdx:gdx"))
-            exclude(dependency("org.jetbrains.kotlin:kotlin-stdlib"))
-        }
-        
+        include ("com/reikaxubia/libgdxtts/**")
+        include("com/sun/speech/**")
+        include("javax/speech/**")
+        include("de/dfki/lt/freetts/**")
+
         archiveBaseName.set("libgdx-tts")
         archiveClassifier.set("")
         from(sourceSets.main.get().output)
