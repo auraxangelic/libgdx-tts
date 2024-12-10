@@ -24,17 +24,25 @@ dependencies {
 
 tasks {
     shadowJar {
-        // Explicitly include local JARs
-        from(fileTree("src/main/resources/libs") {
-            include("*.jar")
-        })
-
-        // Include your project's compiled classes
+        // Include project classes
         from(sourceSets.main.get().output)
 
-        // Avoid including runtime dependencies globally to prevent duplicates
-        configurations = listOf()
+        // Merge runtime dependencies safely
+        doFirst {
+            sourceSets.main.get().runtimeClasspath.forEach { file ->
+                if (file.name.endsWith(".jar")) {
+                    from(zipTree(file)) // Unpack each runtime dependency JAR
+                }
+            }
+        }
 
+        // Handle META-INF/services files to prevent conflicts
+        mergeServiceFiles()
+
+        // Explicitly include .bin files
+        include("**/*.bin")
+
+        // Set archive details
         archiveBaseName.set("libgdx-tts")
         archiveClassifier.set("")
     }
@@ -57,11 +65,12 @@ publishing {
             artifactId = "libgdx-tts" // Artifact name
             version = project.version.toString()
 
-            // Use the shadowJar artifact for publishing
+// Use the shadowJar artifact for publishing
             artifact(tasks.shadowJar.get())
         }
     }
 }
+
 tasks.test {
     useJUnitPlatform()
 }
