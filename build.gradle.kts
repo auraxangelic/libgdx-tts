@@ -12,7 +12,7 @@ sourceSets {
 }
 
 group = "com.github.auraxangelic"
-version = "1.0.17"
+version = "1.0.18"
 
 dependencies {
     implementation("com.badlogicgames.gdx:gdx:${findProperty("gdxVersion")}")
@@ -24,9 +24,6 @@ dependencies {
 
 tasks {
     shadowJar {
-        // Include project classes
-        from(sourceSets.main.get().output)
-
         // Merge runtime dependencies safely
         doFirst {
             sourceSets.main.get().runtimeClasspath.forEach { file ->
@@ -40,7 +37,26 @@ tasks {
         mergeServiceFiles()
 
         // Explicitly include .bin files
-        include("**/*.bin")
+//        include("**/*.bin")
+
+        // Explicitly include local JARs
+        from(fileTree("src/main/resources/libs") {
+            include("*.jar")
+        })
+
+        exclude("com/badlogic/**")
+        exclude("kotlin/**")
+        exclude("org/intellij/**")
+        exclude("org/jetbrains/**")
+
+        // Include your project's compiled classes
+        from(sourceSets.main.get().output)
+
+        // Avoid including runtime dependencies globally to prevent duplicates
+        configurations = listOf()
+
+        archiveBaseName.set("libgdx-tts")
+        archiveClassifier.set("")
 
         // Set archive details
         archiveBaseName.set("libgdx-tts")
