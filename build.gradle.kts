@@ -22,7 +22,7 @@ dependencies {
 
 tasks {
     shadowJar {
-        include ("com/reikaxubia/libgdxtts/**")
+        include("com/reikaxubia/libgdxtts/**")
         include("com/sun/speech/**")
         include("javax/speech/**")
         include("de/dfki/lt/freetts/**")
