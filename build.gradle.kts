@@ -12,24 +12,31 @@ sourceSets {
 }
 
 group = "com.github.auraxangelic"
-version = "1.0.14"
+version = "1.0.15"
 
 dependencies {
     implementation("com.badlogicgames.gdx:gdx:${findProperty("gdxVersion")}")
     implementation("org.jetbrains.kotlin:kotlin-stdlib:${findProperty("kotlinVersion")}")
-    implementation(fileTree(mapOf("dir" to "src/main/resources/libs", "include" to listOf("*.jar"))))
+    implementation(fileTree("src/main/resources/libs") {
+        include("*.jar")
+    })
 }
 
 tasks {
     shadowJar {
-        include("com/reikaxubia/libgdxtts/**")
-        include("com/sun/speech/**")
-        include("javax/speech/**")
-        include("de/dfki/lt/freetts/**")
+        // Explicitly include local JARs
+        from(fileTree("src/main/resources/libs") {
+            include("*.jar")
+        })
+
+        // Include your project's compiled classes
+        from(sourceSets.main.get().output)
+
+        // Avoid including runtime dependencies globally to prevent duplicates
+        configurations = listOf()
 
         archiveBaseName.set("libgdx-tts")
         archiveClassifier.set("")
-        from(sourceSets.main.get().output)
     }
 
     // Disable the default jar task to prevent conflicts
