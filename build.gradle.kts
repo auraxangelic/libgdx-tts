@@ -12,20 +12,24 @@ sourceSets {
 }
 
 group = "com.github.auraxangelic"
-version = "1.0.12"
+version = "1.0.13"
 
 dependencies {
     implementation("com.badlogicgames.gdx:gdx:${findProperty("gdxVersion")}")
     implementation("org.jetbrains.kotlin:kotlin-stdlib:${findProperty("kotlinVersion")}")
     implementation(fileTree(mapOf("dir" to "src/main/resources/libs", "include" to listOf("*.jar"))))
-
-    testImplementation("org.jetbrains.kotlin:kotlin-test")
 }
 
 tasks {
     shadowJar {
-        archiveBaseName.set("libgdx-tts") // Name of the fat JAR
-        archiveClassifier.set("") // Ensure no "-all" suffix
+        // Exclude libGDX classes from the shadow JAR
+        dependencies {
+            exclude(dependency("com.badlogicgames.gdx:gdx"))
+            exclude(dependency("org.jetbrains.kotlin:kotlin-stdlib"))
+        }
+        
+        archiveBaseName.set("libgdx-tts")
+        archiveClassifier.set("")
         from(sourceSets.main.get().output)
     }
 
