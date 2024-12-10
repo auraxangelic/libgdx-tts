@@ -6,9 +6,9 @@ plugins {
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            groupId = "com.reikaxubia"
-            artifactId = "libgdxtts"
-            version = "1.0.3"
+            groupId = "com.github.auraxangelic"
+            artifactId = "libgdx-tts"
+            version = "1.0.16"
 
             from(components["java"])
         }
@@ -16,7 +16,7 @@ publishing {
 }
 
 group = "com.github.auraxangelic"
-version = "1.0.3"
+version = "1.0.16"
 
 dependencies {
     implementation("com.badlogicgames.gdx:gdx:${findProperty("gdxVersion")}")
@@ -24,8 +24,6 @@ dependencies {
     implementation(fileTree(mapOf("dir" to "src/main/resources/libs", "include" to listOf("*.jar"))))
 
     testImplementation("org.jetbrains.kotlin:kotlin-test")
-
-    implementation ("com.github.auraxangelic:libgdx-tts:master-SNAPSHOT")
 }
 
 tasks.test {

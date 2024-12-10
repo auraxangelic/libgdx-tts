@@ -1,2 +1,6 @@
 jdk:
   - openjdk8
+build:
+  artifacts:
+    paths:
+      - build/libs/*.jar
