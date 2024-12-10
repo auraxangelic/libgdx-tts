@@ -12,7 +12,7 @@ sourceSets {
 }
 
 group = "com.github.auraxangelic"
-version = "1.0.18"
+version = "1.0.19"
 
 dependencies {
     implementation("com.badlogicgames.gdx:gdx:${findProperty("gdxVersion")}")
@@ -48,6 +48,9 @@ tasks {
         exclude("kotlin/**")
         exclude("org/intellij/**")
         exclude("org/jetbrains/**")
+        exclude("META-INF/kotlin**")
+        exclude("META-INF/maven/**")
+        exclude("META-INF/versions/**")
 
         // Include your project's compiled classes
         from(sourceSets.main.get().output)
