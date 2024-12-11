@@ -13,7 +13,7 @@ sourceSets {
 }
 
 group = "com.github.auraxangelic"
-version = "1.0.20"
+version = "1.0.21"
 
 dependencies {
     implementation("com.badlogicgames.gdx:gdx:${findProperty("gdxVersion")}")
