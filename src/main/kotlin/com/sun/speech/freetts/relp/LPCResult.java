@@ -479,8 +479,6 @@ public class LPCResult {
 		}
 		return samples;
 	}
-	
-	private AudioDevice realPlayer;
 
 	/**
 	 * Play the sample data on the given player
@@ -491,7 +489,6 @@ public class LPCResult {
 	private boolean  playWaveSamples(AudioDevice player,
 									 FreeTTSSpeakable speakable,
 									 int numberSamples) {
-		realPlayer = audioDeviceGet();
 		boolean ok = true;
 		int numberChannels = getNumberOfChannels();
 		int pmSizeSamples;
@@ -544,7 +541,7 @@ public class LPCResult {
 
 				if (s >= MAX_SAMPLE_SIZE) {
 					if ((ok &= !speakable.isCompleted())) {
-						realPlayer.writeSamples(Bitshift.INSTANCE.bytesToShorts(samples), 0, s/2);
+						player.writeSamples(Bitshift.INSTANCE.bytesToShorts(samples), 0, s/2);
 					}
 					s = 0;
 				}
@@ -556,14 +553,13 @@ public class LPCResult {
 
 		// write out the very last samples
 		if ((ok &= !speakable.isCompleted()) && s > 0) {
-			realPlayer.writeSamples(Bitshift.INSTANCE.bytesToShorts(samples), 0, s/2);
+			player.writeSamples(Bitshift.INSTANCE.bytesToShorts(samples), 0, s/2);
 			s = 0;
 		}
 
 		// tell the AudioPlayer it is the end of Utterance
 		if (ok &= !speakable.isCompleted()) {
-			realPlayer.dispose();
-			realPlayer = null;
+			player.dispose();
 		}
 
 		return ok;
