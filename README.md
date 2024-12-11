@@ -7,6 +7,12 @@ For iOS, please make sure you're using libGDX version 1.13.0 or later.
 
 ## Gradle Configuration
 
+If you don't have already, add Jitpack to your repositories in your root build.gradle.kts file:
+
+```
+maven { setUrl("https://jitpack.io") }
+```
+
 Add the following line to your core module dependencies:
 ```
 api "com.github.auraxangelic:libgdx-tts:1.0.25"
