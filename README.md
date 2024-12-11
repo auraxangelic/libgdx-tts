@@ -7,7 +7,7 @@ Library for a text-to-speech synthesizer for LibGDX. Available for desktop, andr
 
 Add the following line to your core module dependencies:
 ```
-api "com.github.auraxangelic:libgdx-tts:1.0.12"
+api "com.github.auraxangelic:libgdx-tts:1.0.20"
 ```
 
 ## Usage
@@ -24,7 +24,9 @@ import com.reikaxubia.libgdxtts.TextSpeech
 3. The `TextSpeech` class allocates and runs on its own thread. Make sure to deallocate the thread when your game exits by running `TextSpeech.deallocate()`/`TextSpeech.INSTANCE.deallocate()`, or run `exitProcess(0)`/`System.exit(0)`.
 
 ## Known Issues
-On desktop, when a new `speak` call is made, the audio will play a tiny bit of the end of the previous `speak` call. This is due to how the AudioDevice is currently implemented for desktop.
+On desktop, when a new `speak` call is made, the audio will cut off a bit at the end. This is due to how the AudioDevice is currently implemented for desktop.
+
+On iOS, there are issues with the audio that could cause the app to crash. Instead try to 
 
 ## Information
 Created using FreeTTS source: https://freetts.sourceforge.io/ by replacing its default audio player with the libGDX one `Gdx.audio#newAudioDevice`.
