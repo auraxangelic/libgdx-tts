@@ -1,3 +1,5 @@
+jdk:
+  - openjdk20
 build:
   publish:
     # Point JitPack to the build/libs directory for artifacts
