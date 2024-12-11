@@ -26,5 +26,7 @@ import com.reikaxubia.libgdxtts.TextSpeech
 ## Known Issues
 On desktop, when a new `speak` call is made, the audio will cut off a bit at the end. This is due to how the AudioDevice is currently implemented for desktop.
 
+On iOS, there are issues with the audio that could cause the app to crash. Instead try to 
+
 ## Information
 Created using FreeTTS source: https://freetts.sourceforge.io/ by replacing its default audio player with the libGDX one `Gdx.audio#newAudioDevice`.
