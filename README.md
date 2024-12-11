@@ -7,7 +7,7 @@ Library for a text-to-speech synthesizer for LibGDX. Available for desktop, andr
 
 Add the following line to your core module dependencies:
 ```
-api "com.github.auraxangelic:libgdx-tts:1.0.20"
+api "com.github.auraxangelic:libgdx-tts:1.0.25"
 ```
 
 ## Usage
