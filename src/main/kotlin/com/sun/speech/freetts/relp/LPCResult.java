@@ -559,7 +559,7 @@ public class LPCResult {
 
 		// tell the AudioPlayer it is the end of Utterance
 		if (ok &= !speakable.isCompleted()) {
-			player.dispose();
+//			player.dispose();
 		}
 
 		return ok;
