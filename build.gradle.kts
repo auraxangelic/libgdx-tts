@@ -3,6 +3,7 @@ plugins {
     `maven-publish`
     id("com.github.johnrengelman.shadow") version "8.1.1"
 }
+
 sourceSets {
     main {
         java {
@@ -12,7 +13,7 @@ sourceSets {
 }
 
 group = "com.github.auraxangelic"
-version = "1.0.19"
+version = "1.0.20"
 
 dependencies {
     implementation("com.badlogicgames.gdx:gdx:${findProperty("gdxVersion")}")
@@ -24,26 +25,25 @@ dependencies {
 
 tasks {
     shadowJar {
-        // Merge runtime dependencies safely
-        doFirst {
-            sourceSets.main.get().runtimeClasspath.forEach { file ->
-                if (file.name.endsWith(".jar")) {
-                    from(zipTree(file)) // Unpack each runtime dependency JAR
-                }
-            }
+        duplicatesStrategy = DuplicatesStrategy.WARN
+
+        // Properly include your compiled classes and resources
+        from(sourceSets.main.get().output)
+
+        // Include dependencies
+        configurations = listOf(project.configurations.runtimeClasspath.get())
+
+        // Resource handling
+        from("src/main/resources") {
+            include("**/*.bin")
+            include("**/*.idx")
+            include("**/*.txt")
         }
 
-        // Handle META-INF/services files to prevent conflicts
-        mergeServiceFiles()
-
-        // Explicitly include .bin files
-//        include("**/*.bin")
-
-        // Explicitly include local JARs
-        from(fileTree("src/main/resources/libs") {
-            include("*.jar")
-        })
-
+        // Common exclusions
+        exclude("META-INF/*.SF")
+        exclude("META-INF/*.DSA")
+        exclude("META-INF/*.RSA")
         exclude("com/badlogic/**")
         exclude("kotlin/**")
         exclude("org/intellij/**")
@@ -52,26 +52,17 @@ tasks {
         exclude("META-INF/maven/**")
         exclude("META-INF/versions/**")
 
-        // Include your project's compiled classes
-        from(sourceSets.main.get().output)
+        mergeServiceFiles()
 
-        // Avoid including runtime dependencies globally to prevent duplicates
-        configurations = listOf()
-
-        archiveBaseName.set("libgdx-tts")
-        archiveClassifier.set("")
-
-        // Set archive details
+        // Archive details
         archiveBaseName.set("libgdx-tts")
         archiveClassifier.set("")
     }
 
-    // Disable the default jar task to prevent conflicts
     jar {
         enabled = false
     }
 
-    // Ensure shadowJar runs as part of the build lifecycle
     build {
         dependsOn(shadowJar)
     }
@@ -81,15 +72,9 @@ publishing {
     publications {
         create<MavenPublication>("maven") {
             groupId = project.group.toString()
-            artifactId = "libgdx-tts" // Artifact name
+            artifactId = "libgdx-tts"
             version = project.version.toString()
-
-// Use the shadowJar artifact for publishing
             artifact(tasks.shadowJar.get())
         }
     }
-}
-
-tasks.test {
-    useJUnitPlatform()
 }
