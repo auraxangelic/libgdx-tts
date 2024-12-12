@@ -44,4 +44,4 @@ In Java:
 On desktop, when a new `speak` call is made, a small bit of the previous audio will be played.
 
 ## Information
-Created using FreeTTS source: https://freetts.sourceforge.io/ by replacing its default audio player with the libGDX one `Gdx.audio#newAudioDevice`.
+Created using FreeTTS source: https://freetts.sourceforge.io/ and using the audio player of LibGDX `AudioDevice`.
