@@ -3,7 +3,7 @@
 # libgdx-tts
 Library for a text-to-speech synthesizer for LibGDX. Available for desktop, android, and iOS apps.
 
-Use this library for enabling accessibility for visually impaired or blind players of your game, or use it in fun and creative way as part of your gameplay!
+Use this library for implementing accessibility for visually impaired or blind players of your game, or use it in a fun and creative way as part of your gameplay!
 
 For iOS, please make sure you're using libGDX version 1.13.0 or later.
 
@@ -27,7 +27,7 @@ api "com.github.auraxangelic:libgdx-tts:1.0.25"
 
 ## Usage
 
-1. At any point after your Game class has been initialized, you my use the `TextSpeech` class to read any string. It looks like this in Kotlin:
+1. At any point after your Game class has been initialized, you can use the `TextSpeech` class to read any string. It looks like this in Kotlin:
 ```
 import com.reikaxubia.libgdxtts.TextSpeech
 ...
@@ -37,7 +37,7 @@ In Java:
 ```
     TextSpeech.INSTANCE.speak("testing 1 2 3");
 ```
-2. The text to speech will run asynchronously. If you want to block until it's finished speaking, you can run in Kotlin:
+2. The text-to-speech will run asynchronously. If you want to block until it's finished speaking, you can run in Kotlin:
 ```
 TextSpeech.waitUntilFinished()
 ```
