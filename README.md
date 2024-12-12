@@ -3,6 +3,8 @@
 # libgdx-tts
 Library for a text-to-speech synthesizer for LibGDX. Available for desktop, android, and iOS apps.
 
+Use this library for enabling accessibility for visually impaired or blind players of your game, or use it in fun, creative way as part of your gameplay!
+
 For iOS, please make sure you're using libGDX version 1.13.0 or later.
 
 ## Gradle Configuration
