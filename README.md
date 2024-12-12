@@ -34,7 +34,7 @@ import com.reikaxubia.libgdxtts.TextSpeech
 3. The `TextSpeech` class allocates and runs on its own thread. Make sure to deallocate the thread when your game exits by running `TextSpeech.deallocate()`/`TextSpeech.INSTANCE.deallocate()`, or run `exitProcess(0)`/`System.exit(0)`.
 
 ## Known Issues
-On desktop, when a new `speak` call is made, a small bit of the previous audio will be played. This is due to how the AudioDevice is currently implemented for desktop.
+On desktop, when a new `speak` call is made, a small bit of the previous audio will be played.
 
 ## Information
 Created using FreeTTS source: https://freetts.sourceforge.io/ by replacing its default audio player with the libGDX one `Gdx.audio#newAudioDevice`.
