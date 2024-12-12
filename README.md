@@ -37,7 +37,7 @@ In Java:
 ```
     TextSpeech.INSTANCE.speak("testing 1 2 3");
 ```
-2. The text-to-speech will run asynchronously. If you want to block until it's finished speaking, you can run in Kotlin:
+2. The text-to-speech runs asynchronously. Making sure not the block a render function which would freeze your game, if you want to block until it's finished speaking, you can run in Kotlin:
 ```
 TextSpeech.waitUntilFinished()
 ```
