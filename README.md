@@ -37,11 +37,18 @@ In Java:
 ```
     TextSpeech.INSTANCE.speak("testing 1 2 3");
 ```
-2. The text to speech will run asynchronously. If you want to block until it's finished speaking, you can run: `TextSpeech.waitUntilFinished()`/`TextSpeech.INSTANCE.waitUntilFinished()`
-3. The `TextSpeech` class allocates and runs on its own thread. Make sure to deallocate the thread when your game exits by running `TextSpeech.deallocate()`/`TextSpeech.INSTANCE.deallocate()`, or run `exitProcess(0)`/`System.exit(0)`.
+2. The text to speech will run asynchronously. If you want to block until it's finished speaking, you can run in Kotlin:
+```TextSpeech.waitUntilFinished()```
+In Java:
+```TextSpeech.INSTANCE.waitUntilFinished()```
+3. The `TextSpeech` class allocates and runs on its own thread. Make sure to deallocate the thread when your game exits by running
+```TextSpeech.deallocate()```
+In Java:
+```TextSpeech.INSTANCE.deallocate()```
+or run `exitProcess(0)`/`System.exit(0)`.
 
 ## Known Issues
 On desktop, when a new `speak` call is made, a small bit of the previous audio will be played.
 
 ## Information
-Created using FreeTTS source: https://freetts.sourceforge.io/ and using the audio player of LibGDX `AudioDevice`.
+Created using FreeTTS source: https://freetts.sourceforge.io/ and using the LibGDX audio player `AudioDevice`.
