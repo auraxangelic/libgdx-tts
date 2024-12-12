@@ -38,13 +38,21 @@ In Java:
     TextSpeech.INSTANCE.speak("testing 1 2 3");
 ```
 2. The text to speech will run asynchronously. If you want to block until it's finished speaking, you can run in Kotlin:
-```TextSpeech.waitUntilFinished()```
+```
+TextSpeech.waitUntilFinished()
+```
 In Java:
-```TextSpeech.INSTANCE.waitUntilFinished()```
-3. The `TextSpeech` class allocates and runs on its own thread. Make sure to deallocate the thread when your game exits by running
-```TextSpeech.deallocate()```
+```
+TextSpeech.INSTANCE.waitUntilFinished()
+```
+4. The `TextSpeech` class allocates and runs on its own thread. Make sure to deallocate the thread when your game exits by running
+```
+TextSpeech.deallocate()
+```
 In Java:
-```TextSpeech.INSTANCE.deallocate()```
+```
+TextSpeech.INSTANCE.deallocate()
+```
 or run `exitProcess(0)`/`System.exit(0)`.
 
 ## Known Issues
