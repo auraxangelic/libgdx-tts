@@ -9,26 +9,33 @@ For iOS, please make sure you're using libGDX version 1.13.0 or later.
 
 ## Gradle Configuration
 
-If you don't have already, add Jitpack to your repositories in your root build.gradle.kts file:
+If you don't have already, add Jitpack to your repositories in your root `build.gradle.kts` file:
 
 ```
 maven { setUrl("https://jitpack.io") }
 ```
 
-Add the following line to your core module dependencies:
+For `build.gradle`:
+```
+maven { url "https://jitpack.io" }
+```
+
+Add the following line to your core module dependencies in `build.gradle`:
 ```
 api "com.github.auraxangelic:libgdx-tts:1.0.25"
 ```
 
 ## Usage
 
-1. At any point after your Game class has been initialized, you my use the `TextSpeech` class to read any string.
+1. At any point after your Game class has been initialized, you my use the `TextSpeech` class to read any string. It looks like this in Kotlin:
 ```
 import com.reikaxubia.libgdxtts.TextSpeech
 ...
-
     TextSpeech.speak("testing 1 2 3")
-    // TextSpeech.INSTANCE.speak("testing 1 2 3") // in java
+```
+In Java:
+```
+    TextSpeech.INSTANCE.speak("testing 1 2 3");
 ```
 2. The text to speech will run asynchronously. If you want to block until it's finished speaking, you can run: `TextSpeech.waitUntilFinished()`/`TextSpeech.INSTANCE.waitUntilFinished()`
 3. The `TextSpeech` class allocates and runs on its own thread. Make sure to deallocate the thread when your game exits by running `TextSpeech.deallocate()`/`TextSpeech.INSTANCE.deallocate()`, or run `exitProcess(0)`/`System.exit(0)`.
