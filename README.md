@@ -45,7 +45,7 @@ In Java:
 ```
 TextSpeech.INSTANCE.waitUntilFinished()
 ```
-4. The `TextSpeech` class allocates and runs on its own thread. Make sure to deallocate the thread when your game exits by running:
+3. The `TextSpeech` class allocates and runs on its own thread. Make sure to deallocate the thread when your game exits by running:
 ```
 TextSpeech.deallocate()
 ```
