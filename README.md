@@ -1,7 +1,7 @@
 [![](https://jitpack.io/v/auraxangelic/libgdx-tts.svg)](https://jitpack.io/#auraxangelic/libgdx-tts)
 
 # libgdx-tts
-Library for a text-to-speech synthesizer for LibGDX. Available for desktop, android, and iOS apps.
+Library for a text-to-speech synthesizer for LibGDX. Tested working for desktop, android, and iOS apps.
 
 Use this library for implementing accessibility for visually impaired or blind players of your game, or use it in a fun and creative way as part of your gameplay!
 
