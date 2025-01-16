@@ -5,6 +5,8 @@ Library for a text-to-speech synthesizer for LibGDX. Tested working for desktop,
 
 Use this library for implementing accessibility for visually impaired or blind players of your game, or use it in a fun and creative way as part of your gameplay!
 
+Created using FreeTTS source: https://freetts.sourceforge.io/ and using the LibGDX audio player `AudioDevice`.
+
 For iOS, please make sure you're using libGDX version 1.13.0 or later.
 
 ## Gradle Configuration
@@ -57,6 +59,3 @@ or run `exitProcess(0)`/`System.exit(0);`.
 
 ## Known Issues
 On desktop builds only, when a new `speak` call is made, a small bit of the previous audio will be played.
-
-## Information
-Created using FreeTTS source: https://freetts.sourceforge.io/ and using the LibGDX audio player `AudioDevice`.
