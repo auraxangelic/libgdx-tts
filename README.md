@@ -53,7 +53,7 @@ TextSpeech.deallocate()
 ```
 In Java:
 ```
-TextSpeech.INSTANCE.deallocate()
+TextSpeech.INSTANCE.deallocate();
 ```
 or run `exitProcess(0)`/`System.exit(0);`.
 
