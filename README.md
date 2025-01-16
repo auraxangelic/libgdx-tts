@@ -45,7 +45,7 @@ TextSpeech.waitUntilFinished()
 ```
 In Java:
 ```
-TextSpeech.INSTANCE.waitUntilFinished()
+TextSpeech.INSTANCE.waitUntilFinished();
 ```
 3. The `TextSpeech` class allocates and runs on its own thread. Make sure to deallocate the thread when your game exits by running:
 ```
