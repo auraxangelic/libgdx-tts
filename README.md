@@ -58,4 +58,4 @@ TextSpeech.INSTANCE.deallocate();
 or run `exitProcess(0)`/`System.exit(0);`.
 
 ## Known Issues
-On desktop builds only, when a new `speak` call is made, a small bit of the previous audio will be played.
+On desktop builds only, when a new `speak` call is made, a small bit of the end of the previous speak audio will be played.
