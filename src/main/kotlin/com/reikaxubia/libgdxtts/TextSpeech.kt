@@ -7,7 +7,7 @@ import javax.speech.synthesis.Synthesizer.QUEUE_EMPTY
 import javax.speech.synthesis.SynthesizerModeDesc
 
 object TextSpeech {
-    private val synthesizer: Synthesizer
+    private var synthesizer: Synthesizer
 
     init {
         // Set property as Kevin Dictionary
@@ -53,5 +53,10 @@ object TextSpeech {
     /** Frees resources allocated by the synthesizer. */
     fun deallocate() {
         synthesizer.deallocate()
+    }
+
+    /** Cancels any currently speaking and queued text. */
+    fun cancelSpeech() {
+        synthesizer.cancelAll()
     }
 }
