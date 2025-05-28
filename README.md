@@ -33,7 +33,7 @@ import com.reikaxubia.libgdxtts.TextSpeech
 ```
 TextSpeech.INSTANCE.waitUntilFinished();
 ```
-3. To stop speech while it is in the middle of speakinga previous `speak` call:
+3. To stop speech while it is in the middle of speaking a previous `speak` call:
 ```
 TextSpeech.INSTANCE.cancelSpeech();
 ```
