@@ -33,7 +33,11 @@ import com.reikaxubia.libgdxtts.TextSpeech
 ```
 TextSpeech.INSTANCE.waitUntilFinished();
 ```
-3. The `TextSpeech` class allocates and runs on its own thread. Make sure to deallocate the thread when your game exits by running:
+3. To stop speech while it is in the middle of speakinga previous `speak` call:
+```
+TextSpeech.INSTANCE.cancelSpeech();
+```
+4. The `TextSpeech` class allocates and runs on its own thread. Make sure to deallocate the thread when your game exits by running:
 ```
 TextSpeech.INSTANCE.deallocate();
 ```
