@@ -45,4 +45,5 @@ or run `System.exit(0);`.
 
 ## Known Issues
 On desktop builds only, when a new `speak` call is made, a small bit of the end of the previous speak audio will be played.
-Calling `cancelSpeech` while there is no tts allocated could cause an Error. You can try catch it by catching the type `Throwable`.
+
+Calling `cancelSpeech` while there is no tts allocated can cause an Error. You can try catch it by catching the type `Throwable`.
