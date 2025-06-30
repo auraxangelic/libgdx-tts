@@ -18,7 +18,7 @@ maven { url "https://jitpack.io" }
 
 Add the following line to your core module dependencies in `build.gradle`:
 ```
-api "com.github.auraxangelic:libgdx-tts:1.0.25"
+api "com.github.auraxangelic:libgdx-tts:1.1.0"
 ```
 
 ## Usage
